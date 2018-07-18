@@ -1,6 +1,8 @@
 function fate()
 {
   const self = {}
+  self.alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                  'n','o','p','q','r','s','t','u','v','w','x','y','z']
   self.print = function()
   {
     console.log(self);
@@ -24,12 +26,20 @@ function fate()
   }
   self.letter = function(options)
   {
-    options ? casing = options.casing : 0
-    console.log(casing);
-    const alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-                  'n','o','p','q','r','s','t','u','v','w','x','y','z']
-    const char = alpha[Math.floor(Math.random()*alpha.length+1)]
-    return Math.random() > 0.5 ? char.toLowerCase() : char.toUpperCase()
+    let casing = options != null ? options.casing : 'lower'
+    const char = self.alpha[Math.floor(Math.random()*self.alpha.length)]
+
+    switch(casing)
+    {
+      case 'lower':
+        return char.toLowerCase()
+        break
+      case 'upper':
+        return char.toUpperCase()
+        break
+      default:
+        return char.toLowerCase()
+    }
   }
   return self
 }
