@@ -7,23 +7,26 @@ function fate()
   {
     console.log(self);
   }
+  // Return random number between 0 and 1 if no min & max provided
   self.num = function(min,max)
   {
     return min == null || max == null ? Math.random():
           Math.floor(Math.random() * max) + min
   }
+  // Return random float between 0 and 1 if no min & max provided
   self.floating = function(min, max)
   {
       return min == null || max == null ? Math.random() :
             Math.random() * max + min
   }
-  //True 50% of the time unless a chance is passed in
+  // True 50% of the time unless a chance is passed in
   self.bool = function(options)
   {
     options ? chance = options.chance : chance = 50
     const c = (chance != null) ? 1 - (chance / 100) : 0.5
     return Math.random() > c
   }
+  // Return random character
   self.letter = function(options)
   {
     const casing = options != null ? options.casing : 'lower'
