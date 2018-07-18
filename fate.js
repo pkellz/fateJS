@@ -20,13 +20,13 @@ function fate()
   //True 50% of the time unless a chance is passed in
   self.bool = function(options)
   {
-    options ? chance = options.chance : 0
-    let c = (chance != null) ? 1 - (chance / 100) : 0.5
+    options ? chance = options.chance : chance = 50
+    const c = (chance != null) ? 1 - (chance / 100) : 0.5
     return Math.random() > c
   }
   self.letter = function(options)
   {
-    let casing = options != null ? options.casing : 'lower'
+    const casing = options != null ? options.casing : 'lower'
     const char = self.alpha[Math.floor(Math.random()*self.alpha.length)]
 
     switch(casing)
