@@ -1,13 +1,13 @@
 # letter
 
 ```js
-    fate.letter()
+    f8.letter()
     => a
 ```
 Return a random lowercase letter a-z
 
 ```js
-  fate.letter({casing:'upper'})
+  f8.letter({casing:'upper'})
   => R
 ```
 Return a random capital letter (optional: 'lower')
