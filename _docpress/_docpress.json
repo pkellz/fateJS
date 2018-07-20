@@ -1,0 +1,101 @@
+{
+  "css":[
+    "docs/style.css"
+  ], 
+  "toc": {
+    "sections": [
+      {
+        "title": "fateJS",
+        "source": "pages/home.md",
+        "url": "index.html",
+        "slug": "index"
+      },
+      {
+        "title": "usage",
+        "sections": [
+          {
+            "title": "browser",
+            "source": "pages/browser.md",
+            "url": "pages/browser.html",
+            "slug": "pagesbrowser"
+          }
+        ]
+      },
+      {
+        "title": "basic",
+        "sections": [
+          {
+            "title": "num",
+            "source": "pages/num.md",
+            "url": "pages/num.html",
+            "slug": "pagesnum"
+          },
+          {
+            "title": "floating",
+            "source": "pages/floating.md",
+            "url": "pages/floating.html",
+            "slug": "pagesfloating"
+          },
+          {
+            "title": "bool",
+            "source": "pages/bool.md",
+            "url": "pages/bool.html",
+            "slug": "pagesbool"
+          },
+          {
+            "title": "letter",
+            "source": "pages/letter.md",
+            "url": "pages/letter.html",
+            "slug": "pagesletter"
+          }
+        ]
+      }
+    ]
+  },
+  "index": {
+    "index.html": {
+      "source": "pages/home.md",
+      "title": "fateJS",
+      "pageTitle": "fateJS",
+      "slug": "index"
+    },
+    "pages/browser.html": {
+      "source": "pages/browser.md",
+      "title": "browser - fateJS",
+      "pageTitle": "browser",
+      "slug": "pagesbrowser"
+    },
+    "pages/num.html": {
+      "source": "pages/num.md",
+      "title": "num - fateJS",
+      "pageTitle": "num",
+      "slug": "pagesnum"
+    },
+    "pages/floating.html": {
+      "source": "pages/floating.md",
+      "title": "floating - fateJS",
+      "pageTitle": "floating",
+      "slug": "pagesfloating"
+    },
+    "pages/bool.html": {
+      "source": "pages/bool.md",
+      "title": "bool - fateJS",
+      "pageTitle": "bool",
+      "slug": "pagesbool"
+    },
+    "pages/letter.html": {
+      "source": "pages/letter.md",
+      "title": "letter - fateJS",
+      "pageTitle": "letter",
+      "slug": "pagesletter"
+    }
+  },
+  "sources": {
+    "pages/home.md": "index.html",
+    "pages/browser.md": "pages/browser.html",
+    "pages/num.md": "pages/num.html",
+    "pages/floating.md": "pages/floating.html",
+    "pages/bool.md": "pages/bool.html",
+    "pages/letter.md": "pages/letter.html"
+  }
+}
