@@ -22,14 +22,33 @@ function fate()
   // True 50% of the time unless a chance is passed in
   self.bool = function(options)
   {
-    options ? chance = options.chance : chance = 50
-    const c = (chance != null) ? 1 - (chance / 100) : 0.5
-    return Math.random() > c
+    // If user passes in anything but an object or blank call, throw exception
+    if(!isArgumentAnObject(options))
+      throw `Invalid Argument ${typeof options}.`
+
+    const defaults =
+    {
+        chance:50
+    }
+    const settings = extend(defaults, options)
+
+    chance = settings.chance
+    return Math.random() > 1 - (chance / 100)
   }
+
   // Return random character
   self.letter = function(options)
   {
-    const casing = options != null ? options.casing : 'lower'
+    // If user passes in anything but an object or blank call, throw exception
+    if(!isArgumentAnObject(options))
+      throw `Invalid Argument ${typeof options}.`
+
+    const defaults =
+    {
+      casing:'lower'
+    }
+    const settings = extend(defaults,options)
+    const casing = settings.casing
     const char = self.alpha[Math.floor(Math.random()*self.alpha.length)]
 
     switch(casing)
@@ -45,4 +64,12 @@ function fate()
     }
   }
   return self
+}
+function isArgumentAnObject(arg)
+{
+  return (arg instanceof Object || typeof(arg) == 'undefined')
+}
+function extend(defaults,options)
+{
+  return Object.assign(defaults,options)
 }
