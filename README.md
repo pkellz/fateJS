@@ -3,7 +3,7 @@
 
 **fateJS** was created because I wanted to practice writing Javascript libraries. So **feel free** to fork and create pull requests! I want this project to grow.
 
-![fateJS]('demo.png')
+![fateJS](demo.png)
 
 Find the documentation <a href="https://pkellz.github.io/pk/fatedocs" target="_blank">here</a>
 
