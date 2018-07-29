@@ -7,17 +7,38 @@ function fate()
   {
     console.log(self);
   }
-  // Return random number between 0 and 1 if no min & max provided
-  self.num = function(min,max)
+  // Return random number between 0 and 10 if no min & max provided
+  self.num = function(options)
   {
-    return min == null || max == null ? Math.random():
-          Math.floor(Math.random() * max) + min
+    if(!isArgumentAnObject(options))
+      throw `Invalid Argument ${typeof options}.`
+
+    const defaults =
+    {
+      min:0,
+      max:10
+    }
+    const settings = extend(defaults, options)
+
+    const { min, max } = settings
+    return Math.floor(Math.random() * max) + min
   }
   // Return random float between 0 and 1 if no min & max provided
-  self.floating = function(min, max)
+  self.floating = function(options)
   {
-      return min == null || max == null ? Math.random() :
-            Math.random() * max + min
+    if(!isArgumentAnObject(options))
+    throw `Invalid Argument ${typeof options}.`
+
+    const defaults =
+    {
+      min:0,
+      max:1
+    }
+    const settings = extend(defaults, options)
+
+    const { min, max } = settings
+
+    return Math.random() * max + min
   }
   // True 50% of the time unless a chance is passed in
   self.bool = function(options)
@@ -32,7 +53,7 @@ function fate()
     }
     const settings = extend(defaults, options)
 
-    chance = settings.chance
+    const { chance } = settings
     return Math.random() > 1 - (chance / 100)
   }
 
@@ -48,7 +69,7 @@ function fate()
       casing:'lower'
     }
     const settings = extend(defaults,options)
-    const casing = settings.casing
+    const { casing } = settings
     const char = self.alpha[Math.floor(Math.random()*self.alpha.length)]
 
     switch(casing)
